@@ -26,4 +26,4 @@ void I2C_Send7bitAddress(I2C_TypeDef* I2Cx, uint8_t Address, uint8_t I2C_Directi
 }
 可以发现这个函数只是在Address的最后1位根据transmit/receive指令在！替换！1/0，它没有帮你左移1位！
 2.stm32的硬件i2c在一次执行中有很多事件，如果使用事件判断来推进执行，记得处理中间事件（比如ev8_2)，不然可能没有进入下一个执行阶段！
-3.没了
+3.对了，不要笑我还使用阻塞式的OLED例程，这个可以移植，但是真的没必要。没了
